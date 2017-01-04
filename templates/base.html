@@ -105,27 +105,42 @@
         {% endblock headerstyle %}
 
             <!-- Static navbar -->
-            <div class="container">
-                <div class="header-nav">
-                    <div class="header-logo">
-                        <a class="pull-left" href="{{ SITEURL }}/"><img class="mr20" src="{{ SITEURL }}{{NEST_HEADER_LOGO or "/logo.svg" }}" alt="logo">{{ SITENAME }}</a>
+            <nav class="navbar navbar-default">
+              <div class="container">
+                <div class="row">
+                  <div class="container-fluid">
+                    <div class="navbar-header">
+                      <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="{{ SITEURL }}/">
+                        {{ SITENAME }}
+                        <!-- <img src="{{ SITEURL }}{{NEST_HEADER_LOGO or "/logo.svg" }}" alt="{{ SITENAME }}"> -->
+                      </a>
                     </div>
-                    <div class="nav pull-right">
+                    <div class="collapse navbar-collapse">
+                      <ul class="nav navbar-nav navbar-right">
                         {% for title, link in MENUITEMS %}
                             {% if 'http://' in link or 'https://' in link %}
-                                <a href="{{ link }}">{{ title }}</a>
+                                <li><a href="{{ link }}">{{ title }}</a></li>
                             {% else %}
-                                <a href="{{ SITEURL }}{{ link }}">{{ title }}</a>
+                                <li><a href="{{ SITEURL }}{{ link }}">{{ title }}</a></li>
                             {% endif %}
                         {% endfor %}
                         {% if DISPLAY_PAGES_ON_MENU %}
                         {% for pg in PAGES %}
-                            <a {% if pg == page %} class="active"{% endif %} href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a>
+                            <li><a {% if pg == page %} class="active"{% endif %} href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
                         {% endfor %}
                         {% endif %}
+                      </ul>
                     </div>
+                  </div>
                 </div>
-            </div>
+              </div>
+            </nav>
             <!-- /Static navbar -->
 
             <!-- Header -->
@@ -192,5 +207,7 @@
             </div>
         </div>
         <!-- /Footer -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
