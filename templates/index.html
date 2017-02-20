@@ -3,26 +3,16 @@
 {% block title %}{{ NEST_INDEX_HEAD_TITLE }} {% if articles_page.has_previous() %}- page {{ articles_page.number }} {% endif %}- {{ super() }}{% endblock title %}
 {% block description %}{{ SITENAME }}, {{ SITESUBTITLE }}{% endblock description %}
 
-{% block headerstyle %}
-    {% if NEST_HEADER_IMAGES %}
-    <div class="header-container" style="background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('{{ SITEURL }}/images/{{ NEST_HEADER_IMAGES }}'); background-position: center; background-size: cover;">
-    {% else %}
-    <div class="header-container gradient">
-    {% endif %}
-{% endblock headerstyle %}
-
 {% block header %}
-    <div class="container header-wrapper">
+    <div class="container">
         <div class="row">
-              <div class="col-lg-12">
-                  <div class="header-content">
-                      <h1 class="header-title">{{ NEST_INDEX_HEADER_TITLE }}</h1>
-                      <div class="header-underline"></div>
-                      {% if NEST_INDEX_HEADER_SUBTITLE %}
-                      <p class="header-subtitle header-subtitle-homepage">{{ NEST_INDEX_HEADER_SUBTITLE }}</p>
-                      {% endif %}
-                  </div>
-              </div>
+            <div class="col-lg-12">
+                <div class="slider">
+                    <div><img src="{{ SITEURL }}/images/{{ NEST_SLIDER_IMAGES_01 }}" style="display:block; margin:0 auto; max-width:100%; height: auto;" alt=""></div>
+                    <div><img src="{{ SITEURL }}/images/{{ NEST_SLIDER_IMAGES_02 }}" style="display:block; margin:0 auto; max-width:100%; height: auto;" alt=""></div>
+                    <div><img src="{{ SITEURL }}/images/{{ NEST_SLIDER_IMAGES_03 }}" style="display:block; margin:0 auto; max-width:100%; height: auto;" alt=""></div>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock header %}
@@ -69,3 +59,4 @@
     </div>
     {% endif %}
 {% endblock content %}
+

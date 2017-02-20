@@ -14,6 +14,8 @@
         <!-- Stylesheets -->
         {% if NEST_CSS_MINIFY %}
         <link href="{{ SITEURL }}/theme/css/all.min.css" rel="stylesheet">
+        <!-- for slider -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
         {% else %}
         <link href="{{ SITEURL }}/theme/css/bootstrap.min.css" rel="stylesheet">
         <link href="{{ SITEURL }}/theme/css/fonts.css" rel="stylesheet">
@@ -209,5 +211,18 @@
         <!-- /Footer -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Settings for slider where index.html -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.slider').slick({
+                    arrows: false,
+                    autoplay: true,
+                    autoplaySpeed: 3200,
+                });
+            });
+        </script>
+        <!-- End slider settings -->
     </body>
 </html>
