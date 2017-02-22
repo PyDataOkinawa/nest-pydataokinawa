@@ -15,3 +15,7 @@
 .header-date a {
     color: #000000;
 }
+
+.header-container {
+    min-height: 280px;
+}
