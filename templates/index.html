@@ -4,21 +4,14 @@
 {% block description %}{{ SITENAME }}, {{ SITESUBTITLE }}{% endblock description %}
 
 {% block header %}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="slider">
-                    <div><img src="{{ SITEURL }}/images/{{ NEST_SLIDER_IMAGES_01 }}" style="display:block; margin:0 auto; max-width:100%; height: auto;" alt=""></div>
-                    <div><img src="{{ SITEURL }}/images/{{ NEST_SLIDER_IMAGES_02 }}" style="display:block; margin:0 auto; max-width:100%; height: auto;" alt=""></div>
-                    <div><img src="{{ SITEURL }}/images/{{ NEST_SLIDER_IMAGES_03 }}" style="display:block; margin:0 auto; max-width:100%; height: auto;" alt=""></div>
-                </div>
-            </div>
+    <div class="archive-container">
+        <div class="container content archive">
+            <img src="{{ SITEURL }}/images/{{ NEST_TOP_IMAGE }}" style="margin:0;" alt="">
         </div>
-    </div>
 {% endblock header %}
 
 {% block content %}
-    {% if DEFAULT_PAGINATION %}    
+    {% if DEFAULT_PAGINATION %}
 
     <div class="archive-container">
         <div class="container content archive">
